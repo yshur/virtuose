@@ -3,7 +3,7 @@ function signUpUser() {
   var userUp=$('#userUp').val();
   var emailUp=$('#emailUp').val();
   var passUp=$('#passUp').val();
-  $.post("https://youthvod.herokuapp.com/signUpUser",
+  $.post("https://virtuoso-music.herokuapp.com/signUpUser",
     {
       name:userUp,
       email:emailUp,
@@ -19,7 +19,7 @@ function signInUser() {
   var userIn=$('#userIn').val();
   var emailIn=$('#emailIn').val();
   var passIn=$('#passIn').val();
-  $.post("https://youthvod.herokuapp.com/signInUser",
+  $.post("https://virtuoso-music.herokuapp.com/signInUser",
     {
       name:userIn,
       email:emailIn,
@@ -32,7 +32,7 @@ function signInUser() {
   });
 };
 function getRandomSongList() {
-  $.get("https://youthvod.herokuapp.com/getRandomSongList",
+  $.get("https://virtuoso-music.herokuapp.com/getRandomSongList",
     function(data) {
       $(".result").empty();
       $(".result").append(JSON.stringify(data, null, '\t'));
@@ -43,7 +43,7 @@ function pushSongToUserHistory() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
   var song_name=$('#song_name').val();
-  $.post("https://youthvod.herokuapp.com/pushSongToUserHistory",
+  $.post("https://virtuoso-music.herokuapp.com/pushSongToUserHistory",
     {
       user_name: user_name,
       email: email,
@@ -58,7 +58,7 @@ function pushSongToUserHistory() {
 function getSongHistoryList() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
-  $.post("https://youthvod.herokuapp.com/getSongHistoryList",
+  $.post("https://virtuoso-music.herokuapp.com/getSongHistoryList",
     {
       user_name: user_name,
       email: email
