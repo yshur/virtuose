@@ -121,3 +121,90 @@ exports.getSongHistoryList = (req, res) => {
         }
     });
 };  
+
+exports.getRandomSongsUser = (req, res) => {
+    console.log(`getRandomSongsUser() :: user_name = ${req.body.user_name}`);
+    console.log(`email = ${req.body.email}`);
+    var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
+        email = req.body.email ? req.body.email : exports.finalize(0,0,res);
+    user.findOne({
+     $and: [{name:{$eq:user_name}}, {email:{$eq:email}} ]
+    }, (err,usr) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(usr.history);
+            song.find({
+                name: { $in: usr.history }
+            }, (err,sng) => {
+                if(err){
+                    console.log(`err: ${err}`);
+                    res.status(200).json(`{ err : ${err}`);
+                } else {
+                    console.log(sng.tags);
+                    res.status(200).json(sng.tags);
+                }
+            });
+        }
+    });        
+}
+
+exports.pushSongToUserLikes = (req, res) => {
+    console.log(`pushSongToUserLikes() :: user_name = ${req.body.user_name}`);
+    console.log(`email = ${req.body.email}, song_name = ${req.body.song_name}`);
+    var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
+        email = req.body.email ? req.body.email : exports.finalize(0,0,res),
+        song_name = req.body.song_name ? req.body.song_name : exports.finalize(0,0,res);
+    var conditions = {name:user_name, email:email},
+        update = {$set:{name:user_name, email:email},
+                  $push:{likes:song_name}},
+        opts = {multi:true};
+    user.update(conditions, update, opts, (err, usr) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(`Updated document: ${usr}`);
+            res.status(200).json(usr);    
+      }
+   });
+};
+
+exports.getSongLikesList = (req, res) => {
+    console.log(`getSongLikesList() :: user_name = ${req.body.user_name}`);
+    console.log(`email = ${req.body.email}`);
+    var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
+        email = req.body.email ? req.body.email : exports.finalize(0,0,res);
+    user.findOne({
+     $and: [{name:{$eq:user_name}}, {email:{$eq:email}} ]
+    }, (err,usr) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(usr.likes);
+            song.find({
+                name: { $in: usr.likes }
+            }, (err,sng) => {
+                if(err){
+                    console.log(`err: ${err}`);
+                    res.status(200).json(`{ err : ${err}`);
+                } else {
+                    console.log(sng);
+                    res.status(200).json(sng);
+                }
+            });
+        }
+    });
+};  
+
+exports.removeSongFromUserLikes = (req, res) => {
+}
+exports.getCompositorSongs = (req, res) => {
+}
+exports.getTagSongs = (req, res) => {
+}
+exports.getAlbumSongs = (req, res) => {
+}
+

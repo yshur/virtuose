@@ -19,6 +19,14 @@ app.get('/getRandomSongList',data.getRandomSongList);
 app.post('/pushSongToUserHistory',data.pushSongToUserHistory);
 app.post('/getSongHistoryList',data.getSongHistoryList);
 
+// app.post('/getRandomSongsUser',data.getRandomSongsUser);
+// app.post('/getCompositorSongs',data.getCompositorSongs);
+// app.post('/getTagSongs',data.getTagSongs);
+// app.post('/getAlbumSongs',data.getAlbumSongs);
+// app.post('/pushSongToUserLikes',data.pushSongToUserLikes);
+// app.post('/removeSongFromUserLikes',data.removeSongFromUserLikes);
+// app.post('/getSongLikesList',data.getSongLikesList);
+
 
 app.all('*', (req, res, next) => {
   console.log("runs for all HTTP verbs first");
