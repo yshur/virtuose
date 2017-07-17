@@ -122,34 +122,6 @@ exports.getSongHistoryList = (req, res) => {
     });
 };  
 
-exports.getRandomSongsUser = (req, res) => {
-    console.log(`getRandomSongsUser() :: user_name = ${req.body.user_name}`);
-    console.log(`email = ${req.body.email}`);
-    var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
-        email = req.body.email ? req.body.email : exports.finalize(0,0,res);
-    user.findOne({
-     $and: [{name:{$eq:user_name}}, {email:{$eq:email}} ]
-    }, (err,usr) => {
-        if(err){
-            console.log(`err: ${err}`);
-            res.status(200).json(`{ err : ${err}`);
-        } else {
-            console.log(usr.history);
-            song.find({
-                name: { $in: usr.history }
-            }, (err,sng) => {
-                if(err){
-                    console.log(`err: ${err}`);
-                    res.status(200).json(`{ err : ${err}`);
-                } else {
-                    console.log(sng.tags);
-                    res.status(200).json(sng.tags);
-                }
-            });
-        }
-    });        
-}
-
 exports.pushSongToUserLikes = (req, res) => {
     console.log(`pushSongToUserLikes() :: user_name = ${req.body.user_name}`);
     console.log(`email = ${req.body.email}, song_name = ${req.body.song_name}`);
@@ -200,11 +172,108 @@ exports.getSongLikesList = (req, res) => {
 };  
 
 exports.removeSongFromUserLikes = (req, res) => {
+    console.log(`removeSongFromUserLikes() :: user_name = ${req.body.user_name}`);
+    console.log(`email = ${req.body.email}, song_name = ${req.body.song_name}`);
+    var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
+        email = req.body.email ? req.body.email : exports.finalize(0,0,res),
+        song_name = req.body.song_name ? req.body.song_name : exports.finalize(0,0,res);
+    var conditions = {name:user_name, email:email},
+        update = {$set:{name:user_name, email:email},
+                  $pull:{likes: { $in: [song_name] } }},
+        opts = {multi:true};
+    user.update(conditions, update, opts, (err, usr) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(`Updated document: ${usr}`);
+            res.status(200).json(usr);    
+      }
+   });     
 }
 exports.getCompositorSongs = (req, res) => {
+    console.log(`getCompositorSongs() :: compositor = ${req.body.compositor}`);
+    var compositor = req.body.compositor ? req.body.compositor : exports.finalize(0,0,res);
+    song.find({
+        compositor: { $eq: compositor }
+    }, (err,sng) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(sng);
+            res.status(200).json(sng);
+        }
+    });
 }
 exports.getTagSongs = (req, res) => {
+    console.log(`getTagSongs() :: tag = ${req.body.tag}`);
+    var tag = req.body.tag ? req.body.tag : exports.finalize(0,0,res);
+    song.find({
+        tags: { $eq: tag }
+    }, (err,sng) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(sng);
+            res.status(200).json(sng);
+        }
+    });
 }
 exports.getAlbumSongs = (req, res) => {
+    console.log(`getAlbumSongs() :: album = ${req.body.album}`);
+    var album = req.body.album ? req.body.album : exports.finalize(0,0,res);
+    song.find({
+        album: { $eq: album }
+    }, (err,sng) => {
+        if(err){
+            console.log(`err: ${err}`);
+            res.status(200).json(`{ err : ${err}`);
+        } else {
+            console.log(sng);
+            res.status(200).json(sng);
+        }
+    });
 }
 
+// exports.getRandomSongsUser = (req, res) => {
+//     //now it returns the history songs only
+//     //I dont know now how combine tags of the history with random list
+//     console.log(`getRandomSongsUser() :: user_name = ${req.body.user_name}`);
+//     console.log(`email = ${req.body.email}`);
+//     var user_name = req.body.user_name ? req.body.user_name : exports.finalize(0,0,res),
+//         email = req.body.email ? req.body.email : exports.finalize(0,0,res);
+//     user.findOne({
+//      $and: [{name:{$eq:user_name}}, {email:{$eq:email}} ]
+//     }, (err,usr) => {
+//         if(err){
+//             console.log(`err: ${err}`);
+//             res.status(200).json(`{ err : ${err}`);
+//         } else {
+//             console.log(usr.history);
+//             song.find({
+//                 name: { $in: usr.history }
+//             }, (err,sng) => {
+//                 if(err){
+//                     console.log(`err: ${err}`);
+//                     res.status(200).json(`{ err : ${err}`);
+//                 } else {
+//                     console.log(sng);
+//                      res.status(200).json(sng);
+//                     // song.find({
+//                     //     tags: { $eq: sng.tags }
+//                     // }, (err,tagssong) => {
+//                     //     if(err){
+//                     //         console.log(`err: ${err}`);
+//                     //         res.status(200).json(`{ err : ${err}`);
+//                     //     } else {
+//                     //         console.log(tagssong); 
+//                     //         res.status(200).json(tagssong);
+//                     //     }
+//                     // });
+//                 }
+//             });
+//         }
+//     });        
+// }

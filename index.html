@@ -34,10 +34,10 @@
             <p><label>email: </label>
             <input name="email" type="mail" id="emailUp" value="@gmail.com" required></p>
             <p><label>password: </label>
-            <input name="pass" type="text" id="passUp" value="" required></p>
-          <button id="button" onclick="signUpUser()" 
-           id="signUpUser">signUpUser</button> 
-          </form>  
+            <input name="pass" type="password" id="passUp" value="" required></p>
+          <input type="button" id="button" onclick="signUpUser()" value="signUpUser"></button> 
+          </form> 
+          <section id="result" class="result1"></section> 
         </section>
         <section class="api1">
           <h3>signInUser:</h3>
@@ -54,10 +54,11 @@
             <p><label>email: </label>
             <input name="email" type="mail" id="emailIn" value="@gmail.com" required></p>
             <p><label>password: </label>
-            <input name="pass" type="text" id="passIn" value="" required></p>
-          <button id="button" onclick="signInUser()" 
-           id="signInUser">signInUser</button> 
-          </form>         
+            <input name="pass" type="password" id="passIn" value="" required></p>
+           <input type="button" id="button" onclick="signInUser()" 
+           value="signInUser"></button> 
+          </form>    
+          <section id="result" class="result2"></section>                
         </section>
         <section class="api1">
           <h3>getRandomSongList:</h3>
@@ -67,9 +68,10 @@
            https://virtuoso-music.herokuapp.com/getRandomSongList</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
-          <button id="button" onclick="getRandomSongList()" 
-           id="getRandomSongList">getRandomSongList</button> 
+           <input type="button" id="button" onclick="getRandomSongList()" 
+           value="getRandomSongList"></button> 
           </form>         
+          <section id="result" class="result3"></section>           
         </section>
         <section class="api1">
           <h3>pushSongToUserHistory:</h3>
@@ -87,9 +89,10 @@
             <input name="email" type="mail" id="email" value="@gmail.com" required></p>
             <p><label>song_name: </label>
             <input name="song_name" type="text" id="song_name" value="" required></p>
-          <button id="button" onclick="pushSongToUserHistory()" 
-           id="pushSongToUserHistory">pushSongToUserHistory</button> 
+           <input type="button" id="button" onclick="pushSongToUserHistory()" 
+           value="pushSongToUserHistory"></button> 
           </form>  
+          <section id="result" class="result4"></section>           
         </section>
         <section class="api1">
           <h3>getSongHistoryList:</h3>
@@ -105,11 +108,128 @@
             <input name="user_name" type="text" id="user_name" value="" required></p>
             <p><label>email: </label>
             <input name="email" type="mail" id="email" value="@gmail.com" required></p>
-          <button id="button" onclick="getSongHistoryList()" 
-           id="getSongHistoryList">getSongHistoryList</button> 
+           <input type="button" id="button" onclick="getSongHistoryList()" 
+           value="getSongHistoryList"></button> 
           </form>  
+          <section id="result" class="result5"></section>           
         </section>
-      <section class="result"></section>
+
+        <section class="api1">
+          <h3>pushSongToUserLikes:</h3>
+          <p>when we want push song to the list of likes songs, like when the user
+          likes new song, we pass on post method these params: user_name, email, and song_name.<br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/pushSongToUserLikes" target="_blank">
+           https://virtuoso-music.herokuapp.com/pushSongToUserLikes</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>pushSongToUserLikes</h5>
+            <p><label>user_name: </label>
+            <input name="user_name" type="text" id="user_name1" value="" required></p>
+            <p><label>email: </label>
+            <input name="email" type="mail" id="email1" value="@gmail.com" required></p>
+            <p><label>song_name: </label>
+            <input name="song_name" type="text" id="song_name1" value="" required></p>
+           <input type="button" id="button" onclick="pushSongToUserLikes()" 
+           value="pushSongToUserLikes"></button> 
+          </form>  
+          <section id="result" class="result6"></section>           
+        </section>
+        <section class="api1">
+          <h3>removeSongFromUserLikes:</h3>
+          <p>when we want pull out song from the list of likes songs, when user
+          unlikes song that he liked before, we pass on post method these params:
+           user_name, email, and song_name.<br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/removeSongFromUserLikes" target="_blank">
+           https://virtuoso-music.herokuapp.com/removeSongFromUserLikes</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>removeSongFromUserLikes</h5>
+            <p><label>user_name: </label>
+            <input name="user_name" type="text" id="user_name2" value="" required></p>
+            <p><label>email: </label>
+            <input name="email" type="mail" id="email2" value="@gmail.com" required></p>
+            <p><label>song_name: </label>
+            <input name="song_name" type="text" id="song_name2" value="" required></p>
+           <input type="button" id="button" onclick="removeSongFromUserLikes()" 
+           value="removeSongFromUserLikes"></button> 
+          </form>  
+          <section id="result" class="result7"></section>           
+        </section>        
+        <section class="api1">
+          <h3>getSongLikesList:</h3>
+          <p>when we want get the list of likes songs of a user, 
+          we pass params of user_name and email.<br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/getSongLikesList" target="_blank">
+           https://virtuoso-music.herokuapp.com/getSongLikesList</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>getSongLikesList</h5>
+            <p><label>user_name: </label>
+            <input name="user_name" type="text" id="user_name3" value="" required></p>
+            <p><label>email: </label>
+            <input name="email" type="mail" id="email3" value="@gmail.com" required></p>
+           <input type="button" id="button" onclick="getSongLikesList()" 
+           value="getSongLikesList"></button> 
+          </form>  
+          <section id="result" class="result8"></section> 
+        </section>
+        <section class="api1">
+          <h3>getCompositorSongs:</h3>
+          <p>when we want get the list of songs of a compositor, we need pass 
+          on post method param of compositor (like 'Mozart'), <br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/getCompositorSongs" target="_blank">
+           https://virtuoso-music.herokuapp.com/getCompositorSongs</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>getCompositorSongs</h5>
+            <p><label>compositor: </label>
+            <input name="compositor" type="text" id="compositor1" 
+            value="Johann Sebastian Bach" required></p>
+           <input type="button" id="button" onclick="getCompositorSongs()" 
+           value="getCompositorSongs"></button> 
+          </form>  
+          <section id="result" class="result9"></section>           
+        </section> 
+        <section class="api1">
+          <h3>getTagSongs:</h3>
+          <p>when we want get the list of songs of some tag, we need pass 
+          on post method param of tag (like 'Piano'), <br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/getTagSongs" target="_blank">
+           https://virtuoso-music.herokuapp.com/getTagSongs</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>getTagSongs</h5>
+            <p><label>tag: </label>
+            <input name="tag" type="text" id="tag1" 
+            value="Piano" required></p>
+           <input type="button" id="button" onclick="getTagSongs()" 
+           value="getTagSongs"></button> 
+          </form>  
+          <section id="result" class="resultA"></section>           
+        </section> 
+       <section class="api1">
+          <h3>getAlbumSongs:</h3>
+          <p>when we want get the list of songs of a album, we need pass 
+          on post method param of album (like 'Piano Sonata No.1'), <br>
+           the link: 
+           <a href="https://virtuoso-music.herokuapp.com/getAlbumSongs" target="_blank">
+           https://virtuoso-music.herokuapp.com/getAlbumSongs</a><br> 
+           you can see the result by click on the button below:</p>
+            <form action="" method="">
+            <h5>getAlbumSongs</h5>
+            <p><label>album: </label>
+            <input name="album" type="text" id="album1" 
+            value="Piano Sonata No.1" required></p>
+           <input type="button" id="button" onclick="getAlbumSongs()" 
+           value="getAlbumSongs"></button> 
+          </form>  
+          <section id="result" class="resultB"></section>  
+        </section> 
     </div>           
   </body>
 </html>

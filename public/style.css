@@ -16,7 +16,7 @@ body  {
   font-family: "Tahoma", Times, serif;
   padding-left: 40px;
 }
-.result {
+#result {
   width: 100%; 
   display : inline-block ;
   border: 1px black solid;
