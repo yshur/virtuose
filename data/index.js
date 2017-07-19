@@ -44,7 +44,7 @@ exports.signInUser = (req, res) => {
     var name = req.body.name ? req.body.name : exports.finalize(0,0,res) ,
         email = req.body.email ? req.body.email : exports.finalize(0,0,res) ,
         pass = req.body.pass ? req.body.pass : exports.finalize(0,0,res); 
-        user.find({
+        user.findOne({
          $and: [{name:{$eq:name}}, {email:{$eq:email}}, {password:{$eq:pass}} ]
         }, (err,usr) => {
             if(err){
