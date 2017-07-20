@@ -31,7 +31,7 @@ exports.signUpUser = (req, res) => {
                 return;
             }
             else {
-                res.status(200).json({"ok":`document saved ${newUser}`});
+                res.status(200).json(newUser);
                 console.log(`Saved document: ${newUser}`);
             }
         }
