@@ -58,7 +58,7 @@ exports.signInUser = (req, res) => {
 };
 
 exports.getRandomSongList = (req, res) => {
-    var len = 16;
+    var len = 9;
     console.log(`getRandomSongList() :: list of ${len} random songs`);
     // Get len random documents from the songs collection.
     song.aggregate(

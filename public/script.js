@@ -3,7 +3,7 @@ function signUpUser() {
   var userUp=$('#userUp').val();
   var emailUp=$('#emailUp').val();
   var passUp=$('#passUp').val();
-  $.post("https://virtuoso-music.herokuapp.com/signUpUser/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signUpUser/",
     {
       name:userUp,
       email:emailUp,
@@ -19,7 +19,7 @@ function signInUser() {
   var userIn=$('#userIn').val();
   var emailIn=$('#emailIn').val();
   var passIn=$('#passIn').val();
-  $.post("https://virtuoso-music.herokuapp.com/signInUser/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signInUser/",
     {
       name:userIn,
       email:emailIn,
@@ -32,7 +32,7 @@ function signInUser() {
   });
 };
 function getRandomSongList() {
-  $.get("https://virtuoso-music.herokuapp.com/getRandomSongList/",
+  $.get("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getRandomSongList/",
     function(data) {
       $(".result3").empty();
       $(".result3").append(JSON.stringify(data));
@@ -43,7 +43,7 @@ function pushSongToUserHistory() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
   var song_name=$('#song_name').val();
-  $.post("https://virtuoso-music.herokuapp.com/pushSongToUserHistory/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserHistory/",
     {
       user_name: user_name,
       email: email,
@@ -58,7 +58,7 @@ function pushSongToUserHistory() {
 function getSongHistoryList() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
-  $.post("https://virtuoso-music.herokuapp.com/getSongHistoryList/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongHistoryList/",
     {
       user_name: user_name,
       email: email
@@ -74,7 +74,7 @@ function pushSongToUserLikes() {
   var user_name=$('#user_name1').val();
   var email=$('#email1').val();
   var song_name=$('#song_name1').val();
-  $.post("https://virtuoso-music.herokuapp.com/pushSongToUserLikes/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserLikes/",
     {
       user_name: user_name,
       email: email,
@@ -90,7 +90,7 @@ function removeSongFromUserLikes() {
   var user_name=$('#user_name2').val();
   var email=$('#email2').val();
   var song_name=$('#song_name2').val();
-  $.post("https://virtuoso-music.herokuapp.com/removeSongFromUserLikes/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/removeSongFromUserLikes/",
     {
       user_name: user_name,
       email: email,
@@ -106,7 +106,7 @@ function removeSongFromUserLikes() {
 function getSongLikesList() {
   var user_name=$('#user_name3').val();
   var email=$('#email3').val();
-  $.post("https://virtuoso-music.herokuapp.com/getSongLikesList/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongLikesList/",
     {
       user_name: user_name,
       email: email
@@ -120,7 +120,7 @@ function getSongLikesList() {
 
 function getCompositorSongs() {
   var compositor=$('#compositor1').val();
-  $.post("https://virtuoso-music.herokuapp.com/getCompositorSongs/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getCompositorSongs/",
     {
       compositor: compositor
     },
@@ -132,7 +132,7 @@ function getCompositorSongs() {
 };
 function getTagSongs() {
   var tag=$('#tag1').val();
-  $.post("https://virtuoso-music.herokuapp.com/getTagSongs/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getTagSongs/",
     {
       tag: tag
     },
@@ -144,7 +144,7 @@ function getTagSongs() {
 };
 function getAlbumSongs() {
   var album=$('#album1').val();
-  $.post("https://virtuoso-music.herokuapp.com/getAlbumSongs/",
+  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getAlbumSongs/",
     {
       album: album
     },
