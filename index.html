@@ -24,8 +24,8 @@
           <p>for sign up of new user, you need pass on post method these params:
           name, email, and pass.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/signUpUser" target="_blank">
-           https://virtuoso-music.herokuapp.com/signUpUser</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signUpUser" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signUpUser</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>signUpUser</h5>
@@ -44,17 +44,17 @@
           <p>for sign in of old user, you need pass on post method these params:
           name, email, and pass.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/signInUser" target="_blank">
-           https://virtuoso-music.herokuapp.com/signInUser</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signInUser" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signInUser</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>signInUser</h5>
             <p><label>user_name: </label>
-            <input name="name" type="text" id="userIn" value="" required></p>
+            <input name="name" type="text" id="userIn" value="yshur" required></p>
             <p><label>email: </label>
-            <input name="email" type="mail" id="emailIn" value="@gmail.com" required></p>
+            <input name="email" type="mail" id="emailIn" value="yair.shur@gmail.com" required></p>
             <p><label>password: </label>
-            <input name="pass" type="password" id="passIn" value="" required></p>
+            <input name="pass" type="password" id="passIn" value="1234" required></p>
            <input type="button" id="button" onclick="signInUser()" 
            value="signInUser"></button> 
           </form>    
@@ -64,8 +64,8 @@
           <h3>getRandomSongList:</h3>
           <p>for get list of random songs from our DB, you need click on get method on
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getRandomSongList" target="_blank">
-           https://virtuoso-music.herokuapp.com/getRandomSongList</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getRandomSongList" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getRandomSongList</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
            <input type="button" id="button" onclick="getRandomSongList()" 
@@ -78,17 +78,40 @@
           <p>when we want push song to the list of history songs, like when the user
           listening to new song, we pass these params: user_name, email, and song_name.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/pushSongToUserHistory" target="_blank">
-           https://virtuoso-music.herokuapp.com/pushSongToUserHistory</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserHistory" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserHistory</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>pushSongToUserHistory</h5>
             <p><label>user_name: </label>
-            <input name="user_name" type="text" id="user_name" value="" required></p>
+            <input name="user_name" type="text" id="user_name" value="yshur" required></p>
             <p><label>email: </label>
-            <input name="email" type="mail" id="email" value="@gmail.com" required></p>
+            <input name="email" type="mail" id="email" value="yair.shur@gmail.com" required></p>
             <p><label>song_name: </label>
-            <input name="song_name" type="text" id="song_name" value="" required></p>
+            <select name="song_name" id="song_name" required>
+              <option value="Morning Mood">Morning Mood</option>
+              <option value="Death of Åse">Death of Åse</option>
+              <option value="Anitra's Dance">Anitra's Dance</option>
+              <option value="Allegro con brio">Allegro con brio</option>
+              <option value="Andante con moto">Andante con moto</option>
+              <option value="Scherzo Allegro">Scherzo Allegro</option> 
+              <option value="IV. Allegro">IV. Allegro</option> 
+              <option value="I. Allegro">I. Allegro</option> 
+              <option value="Danza pastorale">Danza pastorale</option> 
+              <option value="Adagio For Strings">Adagio For Strings</option> 
+              <option value="Ride of the Valkyries">Ride of the Valkyries</option> 
+              <option value="Larghetto">Larghetto</option> 
+              <option value="Andante">Andante</option>
+              <option value="Canon and Gigue">Canon and Gigue</option>
+              <option value="II. Allegro">II. Allegro</option>
+              <option value="II. Andante">II. Andante</option>
+              <option value="Allegro molto e con fuoco">Allegro molto e con fuoco</option>
+              <option value="Allegro con fuoco">Allegro con fuoco</option>
+              <option value="Introitus and Kyrie">Introitus and Kyrie</option>
+              <option value="Sequenz - Dies irae">Sequenz - Dies irae</option>
+              <option value="Sequenz - Tuba mirum">Sequenz - Tuba mirum</option>
+              <option value="Kyrie">Kyrie</option>
+            </select></p>
            <input type="button" id="button" onclick="pushSongToUserHistory()" 
            value="pushSongToUserHistory"></button> 
           </form>  
@@ -99,15 +122,15 @@
           <p>when we want get the list of history songs of a user, (like for the aside
           that represents this list), we pass params of user_name and email.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getSongHistoryList" target="_blank">
-           https://virtuoso-music.herokuapp.com/getSongHistoryList</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongHistoryList" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongHistoryList</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>getSongHistoryList</h5>
             <p><label>user_name: </label>
-            <input name="user_name" type="text" id="user_name" value="" required></p>
+            <input name="user_name" type="text" id="user_name" value="yshur" required></p>
             <p><label>email: </label>
-            <input name="email" type="mail" id="email" value="@gmail.com" required></p>
+            <input name="email" type="mail" id="email" value="yair.shur@gmail.com" required></p>
            <input type="button" id="button" onclick="getSongHistoryList()" 
            value="getSongHistoryList"></button> 
           </form>  
@@ -119,17 +142,40 @@
           <p>when we want push song to the list of likes songs, like when the user
           likes new song, we pass on post method these params: user_name, email, and song_name.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/pushSongToUserLikes" target="_blank">
-           https://virtuoso-music.herokuapp.com/pushSongToUserLikes</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserLikes" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserLikes</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>pushSongToUserLikes</h5>
             <p><label>user_name: </label>
-            <input name="user_name" type="text" id="user_name1" value="" required></p>
+            <input name="user_name" type="text" id="user_name1" value="yshur" required></p>
             <p><label>email: </label>
-            <input name="email" type="mail" id="email1" value="@gmail.com" required></p>
-            <p><label>song_name: </label>
-            <input name="song_name" type="text" id="song_name1" value="" required></p>
+            <input name="email" type="mail" id="email1" value="yair.shur@gmail.com" required></p>
+         <p><label>song_name: </label>
+            <select name="song_name" id="song_name1" required>
+              <option value="Morning Mood">Morning Mood</option>
+              <option value="Death of Åse">Death of Åse</option>
+              <option value="Anitra's Dance">Anitra's Dance</option>
+              <option value="Allegro con brio">Allegro con brio</option>
+              <option value="Andante con moto">Andante con moto</option>
+              <option value="Scherzo Allegro">Scherzo Allegro</option> 
+              <option value="IV. Allegro">IV. Allegro</option> 
+              <option value="I. Allegro">I. Allegro</option> 
+              <option value="Danza pastorale">Danza pastorale</option> 
+              <option value="Adagio For Strings">Adagio For Strings</option> 
+              <option value="Ride of the Valkyries">Ride of the Valkyries</option> 
+              <option value="Larghetto">Larghetto</option> 
+              <option value="Andante">Andante</option>
+              <option value="Canon and Gigue">Canon and Gigue</option>
+              <option value="II. Allegro">II. Allegro</option>
+              <option value="II. Andante">II. Andante</option>
+              <option value="Allegro molto e con fuoco">Allegro molto e con fuoco</option>
+              <option value="Allegro con fuoco">Allegro con fuoco</option>
+              <option value="Introitus and Kyrie">Introitus and Kyrie</option>
+              <option value="Sequenz - Dies irae">Sequenz - Dies irae</option>
+              <option value="Sequenz - Tuba mirum">Sequenz - Tuba mirum</option>
+              <option value="Kyrie">Kyrie</option>
+            </select></p>
            <input type="button" id="button" onclick="pushSongToUserLikes()" 
            value="pushSongToUserLikes"></button> 
           </form>  
@@ -141,17 +187,40 @@
           unlikes song that he liked before, we pass on post method these params:
            user_name, email, and song_name.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/removeSongFromUserLikes" target="_blank">
-           https://virtuoso-music.herokuapp.com/removeSongFromUserLikes</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/removeSongFromUserLikes" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/removeSongFromUserLikes</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>removeSongFromUserLikes</h5>
             <p><label>user_name: </label>
-            <input name="user_name" type="text" id="user_name2" value="" required></p>
+            <input name="user_name" type="text" id="user_name2" value="yshur" required></p>
             <p><label>email: </label>
-            <input name="email" type="mail" id="email2" value="@gmail.com" required></p>
-            <p><label>song_name: </label>
-            <input name="song_name" type="text" id="song_name2" value="" required></p>
+            <input name="email" type="mail" id="email2" value="yair.shur@gmail.com" required></p>
+         <p><label>song_name: </label>
+            <select name="song_name" id="song_name2" required>
+              <option value="Morning Mood">Morning Mood</option>
+              <option value="Death of Åse">Death of Åse</option>
+              <option value="Anitra's Dance">Anitra's Dance</option>
+              <option value="Allegro con brio">Allegro con brio</option>
+              <option value="Andante con moto">Andante con moto</option>
+              <option value="Scherzo Allegro">Scherzo Allegro</option> 
+              <option value="IV. Allegro">IV. Allegro</option> 
+              <option value="I. Allegro">I. Allegro</option> 
+              <option value="Danza pastorale">Danza pastorale</option> 
+              <option value="Adagio For Strings">Adagio For Strings</option> 
+              <option value="Ride of the Valkyries">Ride of the Valkyries</option> 
+              <option value="Larghetto">Larghetto</option> 
+              <option value="Andante">Andante</option>
+              <option value="Canon and Gigue">Canon and Gigue</option>
+              <option value="II. Allegro">II. Allegro</option>
+              <option value="II. Andante">II. Andante</option>
+              <option value="Allegro molto e con fuoco">Allegro molto e con fuoco</option>
+              <option value="Allegro con fuoco">Allegro con fuoco</option>
+              <option value="Introitus and Kyrie">Introitus and Kyrie</option>
+              <option value="Sequenz - Dies irae">Sequenz - Dies irae</option>
+              <option value="Sequenz - Tuba mirum">Sequenz - Tuba mirum</option>
+              <option value="Kyrie">Kyrie</option>
+            </select></p>
            <input type="button" id="button" onclick="removeSongFromUserLikes()" 
            value="removeSongFromUserLikes"></button> 
           </form>  
@@ -162,8 +231,8 @@
           <p>when we want get the list of likes songs of a user, 
           we pass params of user_name and email.<br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getSongLikesList" target="_blank">
-           https://virtuoso-music.herokuapp.com/getSongLikesList</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongLikesList" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongLikesList</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>getSongLikesList</h5>
@@ -181,14 +250,24 @@
           <p>when we want get the list of songs of a compositor, we need pass 
           on post method param of compositor (like 'Mozart'), <br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getCompositorSongs" target="_blank">
-           https://virtuoso-music.herokuapp.com/getCompositorSongs</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getCompositorSongs" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getCompositorSongs</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>getCompositorSongs</h5>
             <p><label>compositor: </label>
-            <input name="compositor" type="text" id="compositor1" 
-            value="Johann Sebastian Bach" required></p>
+            <select name="compositor" id="compositor1" required>
+              <option value="Edvard Grieg">Edvard Grieg</option>
+              <option value="Ludwig van Beethoven">Ludwig van Beethoven</option>
+              <option value="Antonio Vivaldi">Antonio Vivaldi</option>
+              <option value="Samuel Barber">Samuel Barber</option>
+              <option value="Richard Wagner">Richard Wagner</option>
+              <option value="Frédéric Chopin">Frédéric Chopin</option>
+              <option value="Johann Pachelbel">Johann Pachelbel</option>
+              <option value="Johannes Brahms">Johannes Brahms</option>
+              <option value="Wolfgang Amadeus Mozart">Wolfgang Amadeus Mozart</option>
+              <option value="Johann Sebastian Bach">Johann Sebastian Bach</option>
+            </select></p>            
            <input type="button" id="button" onclick="getCompositorSongs()" 
            value="getCompositorSongs"></button> 
           </form>  
@@ -199,14 +278,38 @@
           <p>when we want get the list of songs of some tag, we need pass 
           on post method param of tag (like 'Piano'), <br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getTagSongs" target="_blank">
-           https://virtuoso-music.herokuapp.com/getTagSongs</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getTagSongs" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getTagSongs</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>getTagSongs</h5>
             <p><label>tag: </label>
-            <input name="tag" type="text" id="tag1" 
-            value="Piano" required></p>
+            <select name="tag" id="tag1" required>
+              <option value="Grieg">Grieg</option>
+              <option value="Incidental">Incidental</option>
+              <option value="Violin">Violin</option>
+              <option value="Piano">Piano</option>
+              <option value="Symphony">Symphony</option>
+              <option value="Beethoven">Beethoven</option>
+              <option value="cello">cello</option>
+              <option value="Concerto">Concerto</option>
+              <option value="Vivaldi">Vivaldi</option>
+              <option value="Barber">Barber</option>
+              <option value="Wagner">Wagner</option>
+              <option value="Chopin">Chopin</option>
+              <option value="Pachelbel">Pachelbel</option>
+              <option value="Gigues">Gigues</option>
+              <option value="Canons">Canons</option>
+              <option value="Dances">Dances</option>
+              <option value="Sonatas">Sonatas</option>
+              <option value="Brahms">Brahms</option>
+              <option value="Requiems">Requiems</option>
+              <option value="Funeral">Funeral</option>
+              <option value="Religious">Religious</option>
+              <option value="Mozart">Mozart</option>
+              <option value="Orchestra">Orchestra</option>
+              <option value="Bach">Bach</option>
+            </select></p>             
            <input type="button" id="button" onclick="getTagSongs()" 
            value="getTagSongs"></button> 
           </form>  
@@ -217,14 +320,20 @@
           <p>when we want get the list of songs of a album, we need pass 
           on post method param of album (like 'Piano Sonata No.1'), <br>
            the link: 
-           <a href="https://virtuoso-music.herokuapp.com/getAlbumSongs" target="_blank">
-           https://virtuoso-music.herokuapp.com/getAlbumSongs</a><br> 
+           <a href="http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getAlbumSongs" target="_blank">
+           http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getAlbumSongs</a><br> 
            you can see the result by click on the button below:</p>
             <form action="" method="">
             <h5>getAlbumSongs</h5>
             <p><label>album: </label>
-            <input name="album" type="text" id="album1" 
-            value="Piano Sonata No.1" required></p>
+            <select name="album" id="album1" required>
+              <option value="Mass in B minor">Mass in B minor</option>
+              <option value="Requiem">Requiem</option>
+              <option value="Piano Sonata No.1">Piano Sonata No.1</option>
+              <option value="Nocturnes">Nocturnes</option>
+              <option value="The Four Seasons">The Four Seasons</option>
+              <option value="Symphony No.5">Symphony No.5</option>
+            </select></p>                     
            <input type="button" id="button" onclick="getAlbumSongs()" 
            value="getAlbumSongs"></button> 
           </form>  
