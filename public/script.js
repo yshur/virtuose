@@ -3,7 +3,7 @@ function signUpUser() {
   var userUp=$('#userUp').val();
   var emailUp=$('#emailUp').val();
   var passUp=$('#passUp').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signUpUser/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/signUpUser/",
     {
       name:userUp,
       email:emailUp,
@@ -19,7 +19,7 @@ function signInUser() {
   var userIn=$('#userIn').val();
   var emailIn=$('#emailIn').val();
   var passIn=$('#passIn').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/signInUser/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/signInUser/",
     {
       name:userIn,
       email:emailIn,
@@ -32,7 +32,7 @@ function signInUser() {
   });
 };
 function getRandomSongList() {
-  $.get("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getRandomSongList/",
+  $.get("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getRandomSongList/",
     function(data) {
       $(".result3").empty();
       $(".result3").append(JSON.stringify(data));
@@ -43,7 +43,7 @@ function pushSongToUserHistory() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
   var song_name=$('#song_name').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserHistory/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/pushSongToUserHistory/",
     {
       user_name: user_name,
       email: email,
@@ -58,7 +58,7 @@ function pushSongToUserHistory() {
 function getSongHistoryList() {
   var user_name=$('#user_name').val();
   var email=$('#email').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongHistoryList/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getSongHistoryList/",
     {
       user_name: user_name,
       email: email
@@ -74,7 +74,7 @@ function pushSongToUserLikes() {
   var user_name=$('#user_name1').val();
   var email=$('#email1').val();
   var song_name=$('#song_name1').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/pushSongToUserLikes/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/pushSongToUserLikes/",
     {
       user_name: user_name,
       email: email,
@@ -90,7 +90,7 @@ function removeSongFromUserLikes() {
   var user_name=$('#user_name2').val();
   var email=$('#email2').val();
   var song_name=$('#song_name2').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/removeSongFromUserLikes/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/removeSongFromUserLikes/",
     {
       user_name: user_name,
       email: email,
@@ -106,7 +106,7 @@ function removeSongFromUserLikes() {
 function getSongLikesList() {
   var user_name=$('#user_name3').val();
   var email=$('#email3').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getSongLikesList/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getSongLikesList/",
     {
       user_name: user_name,
       email: email
@@ -120,7 +120,7 @@ function getSongLikesList() {
 
 function getCompositorSongs() {
   var compositor=$('#compositor1').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getCompositorSongs/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getCompositorSongs/",
     {
       compositor: compositor
     },
@@ -132,7 +132,7 @@ function getCompositorSongs() {
 };
 function getTagSongs() {
   var tag=$('#tag1').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getTagSongs/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getTagSongs/",
     {
       tag: tag
     },
@@ -144,7 +144,7 @@ function getTagSongs() {
 };
 function getAlbumSongs() {
   var album=$('#album1').val();
-  $.post("http://ec2-52-89-100-148.us-west-2.compute.amazonaws.com:3000/getAlbumSongs/",
+  $.post("http://virtuose-load-balancer-936867685.us-west-2.elb.amazonaws.com/getAlbumSongs/",
     {
       album: album
     },
