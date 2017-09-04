@@ -1,12 +1,12 @@
 const consts = require('./consts'),
     mongoose = require('mongoose');
+var songSchema = require('./song_schema');
+var Song = songSchema.songSchema;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(consts.MLAB_KEY);
 const conn = mongoose.connection;//get default connection
 //ref to MODEL
-var Song = require('./song_schema');
-
 conn.on('error', (err) => {
   console.log(`connection error: ${err}`);
 });
